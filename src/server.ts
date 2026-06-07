@@ -6,8 +6,15 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://matchmaker-api-o3cq.onrender.com"
+    ],
+    credentials: true
+  })
+);app.use(express.json());
 
 app.get("/", (_req: any, res: any) => {
   res.json({
