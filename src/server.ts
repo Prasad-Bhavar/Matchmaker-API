@@ -10,11 +10,12 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://matchmaker-api-o3cq.onrender.com"
+      "https://matchmaker-frontend-vgcv.onrender.com",
     ],
-    credentials: true
-  })
-);app.use(express.json());
+    credentials: true,
+  }),
+);
+app.use(express.json());
 
 app.get("/", (_req: any, res: any) => {
   res.json({
